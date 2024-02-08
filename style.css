@@ -49,3 +49,9 @@ h1 {
     color: #747bff;
   }
 }
+
+@media (max-width: 375px) {
+  #description {
+    display: none;
+  }
+}

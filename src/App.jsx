@@ -29,7 +29,7 @@ export function App () {
     gridTemplateColumns: 'repeat(4, 1fr)',
     gap: '2px',
     width: '20vw',
-    margin: 'auto',
+    margin: '2%',
   };
   // const handleIconClick = (icon) => {
   //   if (selectedIcon === icon) {
