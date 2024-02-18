@@ -1,58 +1,28 @@
-import React from 'react';
+import React from 'react'
+import './header.css'
 
-export function Header() {
-  const divStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    backgroundColor: '#1a999f',
-    padding: '2vh',
-    position: 'fixed',
-    width: '99%',
-    height: '8vh',
-    top: '0',
-    margin: '0 auto', 
-    alignItems: 'center',
-  };
-
-  const menuStyles = {
-    listStyleType: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    margin: 0,
-    padding: 0,
-  };
-
-  const items = [
+export function Header () {
+  const links = [
     {
-      id: 1,
-      text: 'Simple objection',
-      options: null,
-      path: '/',
+      text: 'Mi Canal de YouTube',
+      url: 'https://www.youtube.com/@KazuraCollins'
     },
     {
-      id: 2,
-      text: 'Objection Maker',
-      options: null,
-      path: '/MakerPage',
-    },
-    {
-      id: 3,
-      text: 'Courtroom',
-      options: null,
-      path: '/CourtPage',
-    },
-  ];
+      text: 'Mi GitHub',
+      url: 'https://github.com/Kazura-Collins/Programacion-Web2024-1'
+    }
+  ]
 
   return (
-    <div style={divStyle}>
-      <p>Objection.lol</p>
-      <ul style={menuStyles}>
-        {items.map((item) => (
-          <li key={item.id}>
-            <a href={item.path}>{item.text}</a>
+    <div className='header-container'> {/* Aplica la clase CSS 'header-container' */}
+      <img src='https://images.vexels.com/media/users/3/189708/isolated/preview/f0add49e1fe7b06c201d2b6df808334e-drawn-pirate-skull.png' alt='' className='logo' /> {/* Logo */}
+      <ul className='header-list'> {/* Aplica la clase CSS 'header-list' */}
+        {links.map((link, index) => (
+          <li key={index}>
+            <a href={link.url} target='_blank' rel='noopener noreferrer'>{link.text}</a>
           </li>
         ))}
       </ul>
     </div>
-  );
+  )
 }
