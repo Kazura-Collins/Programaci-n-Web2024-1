@@ -1,7 +1,7 @@
 .container {
   background-size: cover;
   background-position: center;
-  color: #F7F5F3; /* Color de texto blanco */
+  color: #F7F5F3; 
   padding: 20px;
   margin: 20px;
 }
@@ -26,17 +26,17 @@
   }
 
   .music-button {
-    background-color: #ef710a; /* Color de fondo */
-    color: #F7F5F3; /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espaciado interno */
-    margin-top: 10px; /* Margen superior */
-    cursor: pointer; /* Cursor al pasar sobre el botón */
-    transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+    background-color: #ef710a;
+    color: #F7F5F3;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .music-button:hover {
-    background-color: #5B3920; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+    background-color: #5B3920;
   }
 
   .increment-button {
