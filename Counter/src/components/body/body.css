@@ -1,0 +1,74 @@
+.container {
+  background-size: cover;
+  background-position: center;
+  color: #F7F5F3; 
+  padding: 20px;
+  margin: 20px;
+}
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #description {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    color: yellow;
+    margin-top: 20px;
+  }
+
+  .music-button {
+    background-color: #ef710a;
+    color: #F7F5F3;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .music-button:hover {
+    background-color: #5B3920;
+  }
+
+  .increment-button {
+    font-family: 'pirate-font', sans-serif;
+    font-size: 1rem;
+    background-color: #429917;
+    color: #F7F5F3;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+  }
+  
+  .increment-button:hover {
+    background-color: #5B3920;
+  }
+
+  .decrement-button {
+    font-family: 'pirate-font', sans-serif;
+    font-size: 1rem;
+    background-color: #9c0b0b;
+    color: #F7F5F3;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+  }
+  
+  .decrement-button:hover {
+    background-color: #5B3920;
+  }
