@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh; 
-  background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0)), url('../PirateCounter/src/assets/Background.jpg');
+  background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0)), url('../Counter/src/assets/Background.jpg');
   background-size: cover;
   background-position: center;
   color: #F7F5F3; 
