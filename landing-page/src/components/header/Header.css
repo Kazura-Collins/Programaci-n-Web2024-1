@@ -1,0 +1,46 @@
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a999f;
+  padding: 2vh;
+  width: 90%; 
+  height: 8vh;
+  top: 0;
+  align-items: center;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 2vh;
+  position: fixed;
+  background-color: #1a999f;
+  width: 90%;
+  top: 8vh;
+  left: 0;
+  z-index: 1;
+}
+
+  .menu-toggle:checked + .menu-icon {
+    display: block;
+  }
+
+  .menu-toggle:checked ~ ul {
+    display: block;
+  }
+
+  ul {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
