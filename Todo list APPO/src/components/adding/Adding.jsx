@@ -1,7 +1,9 @@
+// adding.jsx
 import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import './adding.css'
 
-export function Header ({ onAddTask }) {
+export function Adding ({ onAddTask, toggleList }) {
   const [task, setTask] = useState('')
 
   // Función para manejar el cambio en el input de la tarea
@@ -12,7 +14,13 @@ export function Header ({ onAddTask }) {
   // Función para manejar la adición de la tarea
   const handleAddTask = () => {
     if (task.trim() !== '') {
-      onAddTask(task) // Llamar a la función del padre para agregar la tarea
+      const newTask = {
+        id: uuidv4(), // Generamos un UUID único para la tarea
+        title: task,
+        completed: false // Inicialmente la tarea no está completada
+      }
+      console.log('Nueva tarea añadida:', newTask)
+      onAddTask(newTask) // Llamar a la función del padre para agregar la tarea
       setTask('')
     }
   }
@@ -25,17 +33,19 @@ export function Header ({ onAddTask }) {
   }
 
   return (
-    <div className='header-container'>
-      <img src='../src/assets/Assasin-Logo.png' alt='' className='logo' />
+    <div className='adding-container'>
       <div className='task-input'>
         <input
           type='text'
-          placeholder='Escribe una tarea'
+          placeholder='Escribe tus objetivos'
           value={task}
           onChange={handleTaskChange}
           onKeyPress={handleKeyPress}
         />
         <button onClick={handleAddTask}>Agregar</button>
+        <button onClick={() => toggleList('pending')}>Pendientes</button>
+        <button onClick={() => toggleList('completed')}>Completadas</button>
+        <button onClick={() => toggleList('all')}>Todas</button>
       </div>
     </div>
   )
