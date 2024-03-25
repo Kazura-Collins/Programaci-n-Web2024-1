@@ -1,14 +1,11 @@
-import './style.css'
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-// import { BrowserRouter } from 'react-router-dom'
-import { App } from './src/App'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './src/App.jsx';
+import './style.css';
+import { TaskContextProvider } from './src/context/TaskContextProvider.jsx';
 
-const rootElement = document.getElementById('app')
-const root = createRoot(rootElement)
-
-root.render(
-  // <BrowserRouter>
-  <App />
-  // </BrowserRouter>
-)
+ReactDOM.createRoot(document.getElementById('app')).render(
+  <TaskContextProvider>
+    <App />
+  </TaskContextProvider>
+);

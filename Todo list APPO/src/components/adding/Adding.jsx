@@ -1,36 +1,36 @@
 // adding.jsx
-import React, { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import './adding.css'
+import React, { useState, useContext } from 'react';
+import { TasksContext } from '../../context/TaskContextProvider.jsx';
+import Button from '../button/Button';
+import { v4 as uuidv4 } from 'uuid';
+import './adding.css';
 
-export function Adding ({ onAddTask, toggleList }) {
-  const [task, setTask] = useState('')
+export function Adding() {
+  const { addTask } = useContext(TasksContext);
+  const [task, setTask] = useState('');
 
-  // Función para manejar el cambio en el input de la tarea
   const handleTaskChange = (event) => {
-    setTask(event.target.value)
-  }
+    setTask(event.target.value);
+  };
 
-  // Función para manejar la adición de la tarea
   const handleAddTask = () => {
     if (task.trim() !== '') {
       const newTask = {
-        id: uuidv4(), // Generamos un UUID único para la tarea
+        id: uuidv4(),
         title: task,
-        completed: false // Inicialmente la tarea no está completada
-      }
-      console.log('Nueva tarea añadida:', newTask)
-      onAddTask(newTask) // Llamar a la función del padre para agregar la tarea
-      setTask('')
+        completed: false,
+      };
+      console.log("New task to add:", newTask); // Añadir console.log() aquí
+      addTask(newTask);
+      setTask('');
     }
-  }
+  };
 
-  // Función para manejar la adición de la tarea al presionar Enter
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      handleAddTask()
+      handleAddTask();
     }
-  }
+  };
 
   return (
     <div className='adding-container'>
@@ -42,11 +42,8 @@ export function Adding ({ onAddTask, toggleList }) {
           onChange={handleTaskChange}
           onKeyPress={handleKeyPress}
         />
-        <button onClick={handleAddTask}>Agregar</button>
-        <button onClick={() => toggleList('pending')}>Pendientes</button>
-        <button onClick={() => toggleList('completed')}>Completadas</button>
-        <button onClick={() => toggleList('all')}>Todas</button>
+        <Button onClick={handleAddTask} text='Agregar' style='addTask' />
       </div>
     </div>
-  )
+  );
 }
