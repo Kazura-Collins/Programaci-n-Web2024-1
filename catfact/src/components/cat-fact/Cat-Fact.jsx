@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react'
 
-function CatFacts () {
+function CatFacts ({ onFactChange }) {
   const [fact, setFact] = useState('')
 
   useEffect(() => {
-    fetch('https://catfact.ninja/fact')
-      .then(response => response.json())
-      .then(data => setFact(data.fact))
-      .catch(error => console.log('Error fetching cat fact:', error))
-  }, [])
+    if (!fact) {
+      fetch('https://catfact.ninja/fact')
+        .then(response => response.json())
+        .then(data => {
+          setFact(data.fact)
+          const firstFourWords = data.fact.split(' ').slice(0, 4).join(' ') + '...'
+          onFactChange(firstFourWords)
+        })
+        .catch(error => console.log('Error fetching cat fact:', error))
+    }
+  }, [fact, onFactChange])
 
   return (
     <div>

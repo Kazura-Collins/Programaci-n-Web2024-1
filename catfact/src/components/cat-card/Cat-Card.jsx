@@ -1,24 +1,22 @@
-// CatCard.js
 import React, { useState } from 'react'
 import './CatCard.css'
 import CatImage from '../cat-image/Cat-Image'
-import CatFacts from '../cat-fact/Cat-Fact'
 import ReloadButton from '../reload-button/button'
-import CatFactPreview from '../cat-fact/Cat-Fact-Preview'
+import CatFacts from '../cat-fact/Cat-Fact'
 
 function CatCard () {
-  const [currentFact, setCurrentFact] = useState('')
+  const [preview, setPreview] = useState('')
 
-  const updateFact = (fact) => {
-    setCurrentFact(fact)
+  const handleFactChange = (preview) => {
+    setPreview(preview)
   }
 
   return (
     <div className='cat-card'>
       <div className='cat-card-content'>
         <CatImage />
-        <CatFactPreview fact={currentFact} />
-        <CatFacts onUpdateFact={updateFact} />
+        <div className='fact-preview'>{preview}</div>
+        <CatFacts onFactChange={handleFactChange} />
         <ReloadButton />
       </div>
     </div>

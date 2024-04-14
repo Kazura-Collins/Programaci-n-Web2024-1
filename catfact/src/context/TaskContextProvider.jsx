@@ -1,4 +1,3 @@
-// TaskContextProvider.jsx
 import React, { createContext, useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -10,7 +9,6 @@ export function TaskContextProvider ({ children }) {
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || []
-    console.log('Stored tasks:', storedTasks)
     setTasks(storedTasks.filter(task => !task.completed))
     setCompletedTasks(storedTasks.filter(task => task.completed))
   }, [])
@@ -25,7 +23,6 @@ export function TaskContextProvider ({ children }) {
       title: taskTitle,
       completed: false
     }
-    console.log('New task:', newTask)
     setTasks([...tasks, newTask])
   }
 

@@ -9,7 +9,7 @@ function CatImage () {
     fetch('https://cataas.com/cat')
       .then(response => {
         setImageUrl(response.url)
-        setIsLoading(false) // Cuando la imagen se carga, cambia isLoading a false
+        setIsLoading(false)
       })
       .catch(error => console.log('Error fetching cat image:', error))
   }, [])
