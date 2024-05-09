@@ -1,16 +1,19 @@
-import React from 'react'
-import { TaskContextProvider } from './context/TaskContextProvider'
-import GifSearch from './components/Gif-Search/Gifs'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Favorites } from './components/Favorites/Favorites'; 
+import { GifSearch } from './components/Gif-Search/Gifs';
 
-export default function App () {
+function App() {
   return (
-    <TaskContextProvider>
-      <AppContent />
-    </TaskContextProvider>
-  )
+    <div className="App">
+      
+      <Routes> 
+        <Route path="/" element={<GifSearch />} /> 
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes> 
+      
+    </div>
+  );
 }
 
-function AppContent () {
-  console.log('Rendering AppContent...')
-  return <GifSearch />
-}
+export default App;
