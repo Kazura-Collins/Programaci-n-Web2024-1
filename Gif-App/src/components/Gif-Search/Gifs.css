@@ -1,0 +1,92 @@
+.loader {
+    width: 40px;
+    height: 26px;
+    --c: no-repeat linear-gradient(#ff0000 0 0);
+    background:
+      var(--c) 0    100%,
+      var(--c) 50%  100%,
+      var(--c) 100% 100%;
+    background-size: 8px calc(100% - 4px);
+    position: relative;
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff0000;
+    left: 0;
+    top: 0;
+    animation: 
+      l3-1 1.5s  linear infinite alternate,
+      l3-2 0.75s cubic-bezier(0, 200, .8, 200) infinite;
+  }
+  
+  @keyframes l3-1 {
+    100% { left: calc(100% - 8px); }
+  }
+  
+  @keyframes l3-2 {
+    100% { top: -0.1px; }
+  }
+
+  /* GifSearch.css */
+
+/* Estilo para el contenedor del buscador */
+.gif-search {
+    text-align: center; /* Centrar el contenido */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  }
+  
+  /* Estilo para el campo de entrada */
+  .gif-search input {
+    width: 70%; /* Ancho del campo de entrada */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  /* Estilo para el botón de búsqueda */
+  .gif-search button {
+    padding: 10px 20px; /* Espaciado interno (vertical y horizontal) */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #61008e; /* Color de fondo (azul) */
+    color: white; /* Color del texto (blanco) */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
+    margin-left: 10px; /* Espacio entre el campo de entrada y el botón */
+    transition: background-color 0.3s; /* Transición para un cambio suave */
+  }
+  
+  /* Efecto de cambio de color cuando el botón está en hover */
+  .gif-search button:hover {
+    background-color: #2980b9; /* Color más oscuro al pasar por encima */
+  }
+  
+  /* Estilo para el contenedor de resultados de GIFs */
+  .gif-results {
+    display: flex; /* Usar flexbox para organizar los GIFs */
+    flex-wrap: wrap; /* Permitir múltiples líneas de GIFs */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 20px; /* Espacio entre el buscador y los GIFs */
+  }
+  
+  /* Estilo para los GIFs */
+  .gif-results img {
+    width: 150px; /* Ancho de cada GIF */
+    height: 150px; /* Altura de cada GIF */
+    object-fit: cover; /* Asegurar que los GIFs se adapten bien al tamaño */
+    margin: 10px; /* Espacio entre GIFs */
+    border-radius: 5px; /* Bordes redondeados para los GIFs */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Sombra para los GIFs */
+  }
+  
+  .no-results {
+    color: white;
+  }
