@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function GifResults ({ gifs, isLoading, searchTerm }) {
+function GifResults({ gifs, isLoading, searchTerm, addToFavorites }) {
   return (
     <div className='gif-results'>
       {isLoading && <div className='loader' />}
@@ -11,10 +11,13 @@ function GifResults ({ gifs, isLoading, searchTerm }) {
 
       {!isLoading &&
         gifs.map((gif) => (
-          <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />
+          <div key={gif.id} className='gif-item'>
+            <img src={gif.images.fixed_height.url} alt={gif.title} />
+            <button onClick={() => addToFavorites(gif)}>Agregar a favoritos</button>
+          </div>
         ))}
     </div>
-  )
+  );
 }
 
-export default GifResults
+export default GifResults;

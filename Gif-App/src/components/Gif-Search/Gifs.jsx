@@ -40,7 +40,7 @@ export function GifSearch() {
   };
 
   const addToFavorites = (gif) => {
-    // Cargar GIFs favoritos desde localStorage.
+    // Cargar GIFs favoritos desde Local Storage.
     const storedFavorites = localStorage.getItem('favoriteGifs');
     let favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
 
@@ -48,6 +48,9 @@ export function GifSearch() {
     if (!favorites.find((f) => f.id === gif.id)) {
       favorites.push(gif);
       localStorage.setItem('favoriteGifs', JSON.stringify(favorites));
+      console.log('GIF agregado a favoritos con éxito.');
+    } else {
+      console.log('Este GIF ya está en favoritos.');
     }
   };
 
