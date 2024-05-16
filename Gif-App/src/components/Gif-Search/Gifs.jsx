@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import debounce from 'just-debounce-it';
 import GifSearchInput from '../Gif-Search-Input/Gif-Search';
 import GifResults from '../Gif-Results/Gif-results';
-import './Gifs.css'
 
 const GIPHY_API_KEY = 'VIpOMm86iXXVb9LVMrewvr0CN8jGcD4p';
 
